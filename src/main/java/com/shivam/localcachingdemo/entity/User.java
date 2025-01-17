@@ -5,6 +5,10 @@ public class User {
     private Location location;
 
     // Constructor
+    public User(){
+
+    }
+
     public User(String username, Location location) {
         this.username = username;
         this.location = location;

@@ -17,9 +17,9 @@ public class UserController {
 
     // Create a new user with a given username and location
     @PostMapping("/create")
-    public ResponseEntity<User> createUser(@RequestParam String username, @RequestBody Location location) {
-        User user = userService.createUser(username, location);
-        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User newUser = userService.createUser(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }
 
     // Update the location of an existing user

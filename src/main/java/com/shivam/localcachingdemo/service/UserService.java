@@ -16,10 +16,20 @@ public class UserService {
     private final Map<String, User> users = new HashMap<>();
 
     // Create a new user
-    public User createUser(String username, Location location) {
-        User newUser = new User(username, location);
-        users.put(username, newUser);
+    public User createUser(User user) {
+        if(userExist(user)) {
+            return null;
+        }
+        User newUser = new User(user.getUsername(), user.getLocation());
+        users.put(newUser.getUsername(), newUser);
         return newUser;
+    }
+
+    public boolean userExist(User user) {
+        if(users.containsKey(user.getUsername())) {
+            return true;
+        }
+        return false;
     }
 
     // Get the location of a user

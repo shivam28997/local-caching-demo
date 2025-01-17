@@ -1,37 +1,29 @@
 package com.shivam.localcachingdemo.entity;
 
 public class Location {
-    private double x;
-    private double y;
+    private double latitude;
+    private double longitude;
 
     // Constructor
-    public Location(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public Location(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     // Getters and setters
-    public double getX() {
-        return x;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
+    public double getLongitude() {
+        return longitude;
     }
 
     @Override
     public String toString() {
         return "Location{" +
-                "x=" + x +
-                ", y=" + y +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
                 '}';
     }
 }
